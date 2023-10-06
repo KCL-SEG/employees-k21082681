@@ -1,17 +1,7 @@
 """Employee pay calculator."""
 """ENTER YOUR SOLUTION HERE!"""
 
-class Employee:
-    def __init__(self, name, contract = None):
-        self.name = name
-        self.contract =contract
-
-    def get_pay(self):
-        self.contract.calculate_pay()
-
-    def __str__(self):
-        return self.name +" works on a " + self.contract.__str__() + f"Their total pay is {self.get_pay()}."
-    
+       
 class Commission:
     def __init__(self, commision, contracts):
         self.commision =commision
@@ -53,7 +43,20 @@ class HourlyContract(Commission):
         if self.commision > 0:
             return  f"contract of {self.hours} hours at {self.rate}/hour and receives a bonus comission of {self.commision}."
         return f"contract of {self.hours} hours at {self.rate}/hour."
-        
+
+
+class Employee:
+    def __init__(self, name, contract: object):
+        self.name = name
+        self.contract =contract
+
+    def get_pay(self):
+        return self.contract.calculate_pay()
+
+    def __str__(self):
+        return self.name +" works on a " + self.contract.__str__() + f" Their total pay is {self.get_pay()}."
+
+
 
     
 
